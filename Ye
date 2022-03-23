@@ -787,50 +787,9 @@ game.StarterGui:SetCore("SendNotification", {
 end
 
 function Commands()
-   game.StarterGui:SetCore("ChatMakeSystemMessage", {
-    Text = "> .Perlin Noise";
-    Font = Enum.Font.Cartoon;
-    FontSize = Enum.FontSize.Size60;    
-    })
     wait(0.5)
     game.StarterGui:SetCore("ChatMakeSystemMessage", {
-    Text = "> .Rainbow";
-    Font = Enum.Font.Cartoon;
-    FontSize = Enum.FontSize.Size60;    
-    })
-    wait(0.5)
-    game.StarterGui:SetCore("ChatMakeSystemMessage", {
-    Text = "> .PPBuilder";
-    Font = Enum.Font.Cartoon;
-    FontSize = Enum.FontSize.Size60;    
-    })
-    wait(0.5)
-    game.StarterGui:SetCore("ChatMakeSystemMessage", {
-    Text = "> .Orbit";
-    Font = Enum.Font.Cartoon;
-    FontSize = Enum.FontSize.Size60;    
-    })
-    wait(0.5)
-    game.StarterGui:SetCore("ChatMakeSystemMessage", {
-    Text = "> .BGrid";
-    Font = Enum.Font.Cartoon;
-    FontSize = Enum.FontSize.Size60;    
-    })
-    wait(0.5)
-    game.StarterGui:SetCore("ChatMakeSystemMessage", {
-    Text = "> .Autopilot (Kinda broken doesnt work that well)";
-    Font = Enum.Font.Cartoon;
-    FontSize = Enum.FontSize.Size60;    
-    })
-    wait(0.5)
-    game.StarterGui:SetCore("ChatMakeSystemMessage", {
-    Text = "> .InfiniteTerrain";
-    Font = Enum.Font.Cartoon;
-    FontSize = Enum.FontSize.Size60;    
-    })
-    wait(0.5)
-    game.StarterGui:SetCore("ChatMakeSystemMessage", {
-    Text = "> .Commands";
+    Text = "/ .Perlin Noise / .Rainbow / .Orbit / .PP / .BGrid / .Autopilot / .InfiniteTerrain / .Commands";
     Font = Enum.Font.Cartoon;
     FontSize = Enum.FontSize.Size60;    
     })
