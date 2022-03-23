@@ -3,6 +3,14 @@ game.StarterGui:SetCore("SendNotification", {
     Text = "This chat commands script was made by R4suh/Ethan."; -- Required. Has to be a string.
 })
 
+wait(5)
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Commands"; -- Required. Has to be a string!
+    Text = "Type '.Commands' to see a full list of commands."; -- Required. Has to be a string.
+})
+
+
 local plr = game.Players.LocalPlayer
 local Prefix = '.'
 
@@ -778,6 +786,56 @@ game.StarterGui:SetCore("SendNotification", {
 })
 end
 
+function Commands()
+   game.StarterGui:SetCore("ChatMakeSystemMessage", {
+    Text = "> .Perlin Noise";
+    Font = Enum.Font.Cartoon;
+    FontSize = Enum.FontSize.Size60;    
+    })
+    wait(0.5)
+    game.StarterGui:SetCore("ChatMakeSystemMessage", {
+    Text = "> .Rainbow";
+    Font = Enum.Font.Cartoon;
+    FontSize = Enum.FontSize.Size60;    
+    })
+    wait(0.5)
+    game.StarterGui:SetCore("ChatMakeSystemMessage", {
+    Text = "> .PPBuilder";
+    Font = Enum.Font.Cartoon;
+    FontSize = Enum.FontSize.Size60;    
+    })
+    wait(0.5)
+    game.StarterGui:SetCore("ChatMakeSystemMessage", {
+    Text = "> .Orbit";
+    Font = Enum.Font.Cartoon;
+    FontSize = Enum.FontSize.Size60;    
+    })
+    wait(0.5)
+    game.StarterGui:SetCore("ChatMakeSystemMessage", {
+    Text = "> .BGrid";
+    Font = Enum.Font.Cartoon;
+    FontSize = Enum.FontSize.Size60;    
+    })
+    wait(0.5)
+    game.StarterGui:SetCore("ChatMakeSystemMessage", {
+    Text = "> .Autopilot (Kinda broken doesnt work that well)";
+    Font = Enum.Font.Cartoon;
+    FontSize = Enum.FontSize.Size60;    
+    })
+    wait(0.5)
+    game.StarterGui:SetCore("ChatMakeSystemMessage", {
+    Text = "> .InfiniteTerrain";
+    Font = Enum.Font.Cartoon;
+    FontSize = Enum.FontSize.Size60;    
+    })
+    wait(0.5)
+    game.StarterGui:SetCore("ChatMakeSystemMessage", {
+    Text = "> .Commands";
+    Font = Enum.Font.Cartoon;
+    FontSize = Enum.FontSize.Size60;    
+    })
+end
+
 plr.Chatted:Connect(function(msg)
 	if msg == Prefix.."Rainbow" then 
         Rainbow()
@@ -793,5 +851,7 @@ plr.Chatted:Connect(function(msg)
         Autopilot()
     elseif msg == Prefix.."InfiniteTerrain" then
         InfiniteTerrain()
-	end
+    elseif msg == Prefix.."Commands" then
+   	Commands()
+    end
 end)
