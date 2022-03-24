@@ -795,12 +795,12 @@ function Commands()
     })
 end
 
-function BringBlock()
+function BringBlock(Body)
    local Aircraft = game.Workspace.R4suhAircraft:GetChildren()
    
    for i=1, #Aircraft do
    	if Aircraft[i].Name == "BlockStd" then
-	   Body = Instance.new("BodyPosition")
+	   local Body = Instance.new("BodyPosition")
 	   Body.Parent = Aircraft[i].BlockStd
 	end
    end
@@ -824,9 +824,9 @@ plr.Chatted:Connect(function(msg)
     elseif msg == Prefix.."Commands" then
    	Commands()
     elseif msg == Prefix.."BringBlocks" then
-   	  while wait() do
-	      Body.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
-	   end
-    	BringBlock()
+    	BringBlock(Body)
+	while wait() do
+	   Body.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+	end
     end
 end)
