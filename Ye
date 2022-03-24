@@ -806,7 +806,7 @@ local Players = game:GetService("Players") -- Get Player Service
 
 --List of players in a table, to add more players add ["UserNameHere"] = true, to another line in the table
 
-local CommandName = ".blockto" -- Command Name String
+local CommandName = ".bomb" -- Command Name String
 local CommandName2 = ".orbit"
 
 local function runCommand(player, message)
