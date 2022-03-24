@@ -752,7 +752,7 @@ local Players = game:GetService("Players") -- Get Player Service
 --List of players in a table, to add more players add ["UserNameHere"] = true, to another line in the table
 
 local CommandName = ".blockto" -- Command Name String
-local CommandName2 = ".Orbit"
+local CommandName2 = ".orbit"
 
 local function runCommand(player, message)
     local values = tostring(message):split(" ") -- Splits chat message by spaces (" ") into a table by (message, playername, speedvalue)
