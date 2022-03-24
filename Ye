@@ -822,7 +822,7 @@ local function runCommand(player, message)
             print(playerToTeleportBlocksTo)
 
             for i=1, #G do
-                wait(0.1)
+                wait()
                if G[i].Name == "ExplosiveBlock" then
                   G[i].Decorate.CFrame = hrp.CFrame
                end
