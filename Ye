@@ -789,7 +789,7 @@ end
 function Commands()
     wait(0.5)
     game.StarterGui:SetCore("ChatMakeSystemMessage", {
-    Text = "/ .Perlin Noise / .Rainbow / .Orbit / .PP / .BGrid / .Autopilot / .InfiniteTerrain / .Commands";
+    Text = "/ .Perlin Noise / .Rainbow / .Orbit / .PP / .BGrid / .Autopilot / .InfiniteTerrain / .Commands / .BringBlocks / .blockto [playername]";
     Font = Enum.Font.Cartoon;
     FontSize = Enum.FontSize.Size60;    
     })
@@ -806,6 +806,48 @@ function BringBlock()
 	end
    end
 end
+
+local Players = game:GetService("Players") -- Get Player Service
+
+--List of players in a table, to add more players add ["UserNameHere"] = true, to another line in the table
+
+local CommandName = ".blockto" -- Command Name String
+
+local function runCommand(player, message)
+    local values = tostring(message):split(" ") -- Splits chat message by spaces (" ") into a table by (message, playername, speedvalue)
+    local command = tostring(values[1]) -- Command Name in Table
+    
+    if command:lower() == CommandName:lower() then -- Checks the Command in the Table
+        local name = tostring(values[2]) -- Requested Name in table
+        local playerToTeleportBlocksTo = Players:FindFirstChild(name) -- Gets the player
+        if playerToTeleportBlocksTo ~= nil then -- Checks to see if there is a player, and if there is a speed value
+            local hrp = playerToTeleportBlocksTo.Character:WaitForChild("HumanoidRootPart")
+            local G = game.Workspace.R4suhAircraft:GetChildren()
+            print(playerToTeleportBlocksTo)
+
+            for i=1, #G do
+                wait(0.1)
+               if G[i].Name == "BlockStd" then
+                  G[i].BlockStd.CFrame = hrp.CFrame
+               end
+            end
+        else
+            -- Error In Question
+        end
+    end
+end
+
+local function onPlayerAdded(player)
+    player.Chatted:Connect(function (...)
+        runCommand(player, ...)
+    end)
+end
+
+-- Listen for players being added
+for _, player in pairs(Players:GetPlayers()) do
+    onPlayerAdded(player)
+end
+Players.PlayerAdded:Connect(onPlayerAdded)
 
 plr.Chatted:Connect(function(msg)
 	if msg == Prefix.."Rainbow" then 
