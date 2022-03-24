@@ -823,8 +823,8 @@ local function runCommand(player, message)
 
             for i=1, #G do
                 wait(0.1)
-               if G[i].Name == "BlockStd" then
-                  G[i].BlockStd.CFrame = hrp.CFrame
+               if G[i].Name == "ExplosiveBlock" then
+                  G[i].Decorate.CFrame = hrp.CFrame
                end
 	    end
         end
