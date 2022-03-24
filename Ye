@@ -795,6 +795,18 @@ function Commands()
     })
 end
 
+function BringBlock()
+   local Aircraft = game.Workspace.R4suhAircraft:GetChildren()
+   
+   for i=1, #Aircraft do
+   	if Aircraft[i].Name == "BlockStd" then
+	   local Body = Instance.new("BodyPosition")
+	   Body.Parent = Aircraft[i].BlockStd
+	   Body.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+	end
+   end
+end
+
 plr.Chatted:Connect(function(msg)
 	if msg == Prefix.."Rainbow" then 
         Rainbow()
@@ -812,5 +824,7 @@ plr.Chatted:Connect(function(msg)
         InfiniteTerrain()
     elseif msg == Prefix.."Commands" then
    	Commands()
+    elseif msg == Prefix.."BringBlocks" then
+    	BringBlock()
     end
 end)
