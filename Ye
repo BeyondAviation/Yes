@@ -800,11 +800,8 @@ function BringBlock()
    
    for i=1, #Aircraft do
    	if Aircraft[i].Name == "BlockStd" then
-	   local Body = Instance.new("BodyPosition")
+	   Body = Instance.new("BodyPosition")
 	   Body.Parent = Aircraft[i].BlockStd
-	   while wait() do
-	      Body.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
-	   end
 	end
    end
 end
@@ -827,6 +824,9 @@ plr.Chatted:Connect(function(msg)
     elseif msg == Prefix.."Commands" then
    	Commands()
     elseif msg == Prefix.."BringBlocks" then
+   	  while wait() do
+	      Body.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+	   end
     	BringBlock()
     end
 end)
