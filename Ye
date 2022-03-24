@@ -800,9 +800,9 @@ function BringBlock()
    
    for i=1, #Aircraft do
    	if Aircraft[i].Name == "BlockStd" then
-	   local Body = Instance.new("BodyPosition")
-	   Body.Parent = Aircraft[i].BlockStd
-	   Body.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+	   local body = Instance.new("BodyPosition")
+	   body.Parent = Aircraft[i].BlockStd
+	   body.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
 	end
    end
 end
